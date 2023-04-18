@@ -4,8 +4,11 @@
   "description": "\"server to handle client\"",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js",
-    "build": "npm i"
+    "start":"node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix ./client",
+    "dev": "concurrently \"npm start\" \"npm run client\""
+    
   },
   "author": "\"abhishekh\"",
   "license": "ISC",
@@ -14,6 +17,7 @@
     "bcrypt": "^5.1.0",
     "child_process": "^1.0.2",
     "cloudinary": "^1.36.1",
+    "concurrently": "^8.0.1",
     "cors": "^2.8.5",
     "dot-env": "^0.0.1",
     "dotenv": "^16.0.3",
